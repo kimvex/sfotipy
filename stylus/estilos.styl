@@ -1,11 +1,29 @@
 @import "normalize.styl"
 
+gris_oscuro = #333333
+gris_claro = #818181
+
 body
+	font-family 'Roboto', sans-serif;
 	font-size 16px
+figure 
+	margin 0
 .container
 	padding 1.4em
-	
+	font-size 0
+	text-align center
+.name
+	color gris_oscuro
+.author
+	color gris_claro
 .song
 	width 8rem
 	display inline-block
 	font-size 1rem
+	text-align left
+	margin-right 1em
+	margin-bottom 1em
+	&:nth-child(even)
+		margin-right 0
+	p
+		margin .5em 0
