@@ -29,13 +29,15 @@ img
 	margin-right 0.5em
 	&:last-child
 		margin 0
+	&.gray
+		color gris_claro
 .actions
 	position absolute
 	bottom 0
 	left 0
 	right 0
 	background rgba(black, .3)
-.boder-bottom
+.border-bottom
 	border-bottom 1px solid gris_claro
 .name
 	color gris_oscuro
@@ -51,12 +53,21 @@ img
 	text-align center
 .padding
 	padding 1em
+.padding-tb
+	padding 1em 0
 .progress
 	margin 1em 0em
+	position relative
 	.min
 	.max
 		font-size .8em
+		top -5px
 	.min
+		position absolute
+		left 0
+	.max 
+		position absolute
+		right 0
 	.total
 		background gris_claro
 		border-radius 5px
