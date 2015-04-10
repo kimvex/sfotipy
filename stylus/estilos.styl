@@ -1,8 +1,22 @@
+@import "nib" 
 @import "normalize.styl"
 @import "fonts.styl"
-
+//Para compilar nib, tenemos que importarlo antes de todo
+vendor-prefixes = webkit o ms moz official
+/*Esto es para que en el momento de que haya un
+nuevo motor de render de un navegador podamos
+agregarlo por nuestra cuenta*/
+/*Esto es un Mixins, es una funcion en stylus*/
+/*animacion(parametro)
+	-webkit-animation parametro
+	-moz-animation parametro
+	-o-animation parametro
+	-ms-animation parametro
+	animation parametro
+*/
 gris_oscuro = #333333
 gris_claro = #818181
+gris_mas_claro = #F0F0F0
 rojo = #BD255B
 a 
 	text-decoration none
@@ -13,6 +27,9 @@ figure
 	margin 0
 img
 	vertical-align top 
+ul
+	padding 0
+	margin 0
 .button-menu
 	color gris_oscuro
 	left .5em
@@ -41,6 +58,11 @@ img
 	border-bottom 1px solid gris_claro
 .name
 	color gris_oscuro
+.wrap
+	width 1000px
+.round
+	border-radius 50%
+	overflow hidden
 .menu
 	display none
 .relative
@@ -55,6 +77,10 @@ img
 	padding 1em
 .padding-tb
 	padding 1em 0
+.left
+	float left
+.right 
+	float right
 .progress
 	margin 1em 0em
 	position relative
@@ -80,6 +106,10 @@ img
 		width 30%
 		border-radius 5px
 		position relative
+		/*En lugar de poner varios animation con soporte
+		solo uso mi Mixins*/
+		//Linear es oara que la animacion comience como termina
+		animation 10s state infinite linear
 	.circle
 		width 10px
 		height 10px
@@ -88,6 +118,25 @@ img
 		position absolute
 		right 0
 		top -2px
+		animation 1s circle infinite
+/*Los keyframes sirven para hacer animaciones, haciendo uso del
+nombre que le hayamos dado*/
+/*Se puede poner estados de donde a donde a donde
+sera la animacion, from a to. Tambien se pueden
+usar porcentajes en lugar de from y to, seria 0% - 100%*/
+	//from
+	//to
+@keyframes state
+	0%
+		width 0
+	100%
+		width 100%
+@keyframes circle
+	0%
+		transform scale(1)
+	100%
+		transform scale(2)
+		opacity 0
 .right-text
 	text-align right
 .header
@@ -111,3 +160,109 @@ img
 .playing
 	&.small
 		width 20em
+		margin 0 auto
+.input
+	border 1px solid gris_claro
+	height 2.5em
+	border-radius 5px
+	padding 0 1em 0 2em
+.search-icon
+	position absolute
+	left .5em
+	top .8em
+	color gris_claro
+.close-icon
+	position absolute
+	top .5em
+	color gris_claro
+	right .5em
+	font-size 1.2em
+.user 
+	width 175px
+.playlist
+	width 22em
+	padding 0 2em
+	border-left 1px solid gris_claro
+	display block
+	display none
+	.list
+		list-style none
+	.item
+		padding 1em 0
+	.action
+		font-size .8em
+.isotipo
+	width 122px
+.logo
+	padding 1.3em 0
+	overflow hidden
+	background #FFF
+	display block
+	display none
+.avatar
+	width 38px
+	height 38px
+.username
+	color gris_claro
+	position relative
+	top 9px
+	margin-left .5em
+	&:after
+		content ""
+		border-left 7px solid transparent
+		border-right 7px solid transparent
+		border-top 9px solid gris_claro
+		display inline-block
+		margin-left .5em
+@media screen and (min-width:480px)
+	.song
+		&:nth-child(even)
+			margin-right 1em
+	.image
+		img
+			width 100%
+			height auto
+	.playing
+		&.medium
+			width auto
+@media screen and (min-width:1000px)
+	body
+		background gris_mas_claro
+	.button-menu
+		display none
+	.playing
+		padding-top 1.3em
+		&.large
+			margin 0 auto
+			width 62.5em
+			overflow hidden
+	.header
+		height auto
+		border none
+		.title
+			display none
+	.music
+		width 32.5em
+		float left
+		.description
+			display none
+	.menu
+		display block
+		background gris_mas_claro
+		overflow hidden
+		border-top 1px solid gris_claro
+		.item
+			float left
+			list-style none
+			a
+				color gris_oscuro
+				text-transform uppercase
+				cursor pointer
+				padding 1em
+				display block
+				border-top 5px solid transparent
+				&:hover
+					border-top 5px solid gris_oscuro
+	.logo
+	.playlist
+		display block
