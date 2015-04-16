@@ -25,7 +25,7 @@ Sfotipy.SongView = Backbone.View.extend({
 		this.listenTo(this.model, "change", this.render, this);
 	},
 
-	//Agregamos la funcion que se ejecutara
+	//Agregamos la funcion que se ejecutara.
 	render: function(){
 		//var song = this.model;
 		//var name = song.get('name');
