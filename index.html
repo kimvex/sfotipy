@@ -172,14 +172,7 @@
 					<a href="#" class="action gray icon-share"></a>
 					</span>
 				</li><li class="item border-bottom">
-					<span>
-						Sophie Ellis-Bextor
-					</span>
-					<span class="right">		
-					<a href="#" class="action gray icon-add"></a>
-					<a href="#" class="action gray icon-love"></a>
-					<a href="#" class="action gray icon-share"></a>
-					</span>
+					
 				</li>
 			</ul>
 		</div>
@@ -337,5 +330,20 @@
 			</p>
 		</article>
 	</section>
+	<script id="song-templete" type="text/x-handlebars-templete">
+		<span>
+			{{name}} - {{author}}
+		</span>
+		<span class="right">		
+			<a href="#" class="action gray icon-add"></a>
+			<a href="#" class="action gray icon-love"></a>
+			<a href="#" class="action gray icon-share"></a>
+		</span>
+	</script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/jquery-1.11.2.js"></script>
+	<script src="lib/backbone.js"></script>
+	<script src="lib/handlebars-v3.0.1.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
